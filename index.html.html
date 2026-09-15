@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ronnel Baskiñas — reliable virtual assistant and digital support for busy professionals and growing businesses.">
+  <title>Ronnel Baskiñas | Virtual Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#071018; --surface:#0d1822; --surface2:#111f2b; --text:#eef7f8;
+      --muted:#9db0ba; --accent:#62e6c2; --accent2:#74a7ff; --border:rgba(255,255,255,.09);
+      --shadow:0 24px 70px rgba(0,0,0,.35); --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;background:radial-gradient(circle at 85% 10%,rgba(116,167,255,.13),transparent 25%),radial-gradient(circle at 10% 25%,rgba(98,230,194,.08),transparent 28%),var(--bg);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(7,16,24,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-inner{height:85px;display:flex;align-items:center;justify-content:space-between}
+    
+    /* Mas malaking profile picture katabi ng pangalan */
+    .logo{font-family:"Space Grotesk";font-size:1.15rem;font-weight:700;letter-spacing:-.4px;display:flex;align-items:center;gap:14px}
+    .logo-avatar{width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:top;border:2.5px solid var(--accent);box-shadow:0 0 14px rgba(98,230,194,.4)}
+    .logo span{color:var(--accent)}
+    
+    .nav-links{display:flex;gap:28px;align-items:center;font-size:.92rem;color:var(--muted)}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{padding:10px 16px;border:1px solid rgba(98,230,194,.35);border-radius:999px;color:var(--accent)!important}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;padding:130px 0 70px}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+    h1{font-family:"Space Grotesk";font-size:clamp(3rem,7vw,5.8rem);line-height:.98;letter-spacing:-4px;max-width:720px}
+    h1 .gradient{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--muted);font-size:1.08rem;max-width:600px;margin:24px 0 30px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{padding:13px 20px;border-radius:12px;font-weight:700;border:1px solid var(--border);transition:.25s}
+    .btn-primary{background:var(--accent);color:#062018;border-color:var(--accent)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(98,230,194,.2)}
+    .btn-secondary:hover{background:var(--surface2)}
+    .hero-card{position:relative;border:1px solid var(--border);background:linear-gradient(145deg,rgba(17,31,43,.9),rgba(10,20,28,.7));border-radius:30px;padding:14px;box-shadow:var(--shadow);overflow:hidden}
+    .hero-card img{width:100%;height:490px;object-fit:cover;border-radius:22px;display:block;filter:saturate(.85) contrast(1.05)}
+    .floating{position:absolute;left:30px;bottom:30px;right:30px;padding:18px;background:rgba(7,16,24,.82);border:1px solid var(--border);backdrop-filter:blur(14px);border-radius:18px}
+    .floating strong{display:block;font-family:"Space Grotesk";font-size:1.05rem}.floating small{color:var(--muted)}
+    section{padding:100px 0}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
+    .section-head h2{font-family:"Space Grotesk";font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-2px}
+    .section-head p{color:var(--muted);max-width:470px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{padding:28px;border:1px solid var(--border);background:rgba(13,24,34,.72);border-radius:var(--radius);transition:.25s}
+    .service:hover{transform:translateY(-5px);border-color:rgba(98,230,194,.28)}
+    .icon{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:rgba(98,230,194,.1);color:var(--accent);font-size:1.25rem;margin-bottom:22px}
+    .service h3{font-family:"Space Grotesk";margin-bottom:10px;font-size:1.2rem}.service p{color:var(--muted);font-size:.94rem}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+    .about-img{width:100%;height:450px;object-fit:cover;border-radius:28px;border:1px solid var(--border)}
+    .about-copy h2{font-family:"Space Grotesk";font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.05;letter-spacing:-2px;margin-bottom:20px}
+    .about-copy p{color:var(--muted);margin-bottom:18px}
+    .checks{display:grid;gap:12px;margin-top:24px}.checks div{display:flex;gap:10px;align-items:center}.checks span{color:var(--accent);font-weight:700}
+    .contact-box{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:36px;border-radius:28px;border:1px solid var(--border);background:linear-gradient(135deg,rgba(17,31,43,.85),rgba(10,20,28,.8))}
+    .contact-box h2{font-family:"Space Grotesk";font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-2px}
+    .contact-box p{color:var(--muted);margin-top:15px;max-width:500px}
+    form{display:grid;gap:12px} input,textarea{width:100%;padding:14px 15px;border:1px solid var(--border);background:#09131c;color:var(--text);border-radius:12px;font:inherit;outline:none} input:focus,textarea:focus{border-color:rgba(98,230,194,.55)} textarea{min-height:125px;resize:vertical}
+    footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:.88rem}.footer-inner{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:850px){.hero,.about-grid,.contact-box{grid-template-columns:1fr}.hero{padding-top:120px}.hero-card img{height:400px}.services{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:12px}.nav-links{gap:13px}.nav-links a:not(.nav-cta){display:none}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <img src="1000614703.jpg" alt="Ronnel Baskiñas" class="logo-avatar">
+        Ronnel <span>Baskiñas</span>
+      </a>
+      <div class="nav-links">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="home">
+    <div class="container hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Available for remote work</div>
+        <h1>Reliable support for your <span class="gradient">next level.</span></h1>
+        <p>I’m Ronnel, a detail-oriented Virtual Assistant helping busy professionals and growing businesses stay organized, productive, and focused on what matters.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#contact">Let’s Work Together</a>
+          <a class="btn btn-secondary" href="#services">Explore Services</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85" alt="Professional team working together">
+        <div class="floating"><strong>Professional. Organized. Dependable.</strong><small>Administrative support • Digital assistance • Client-ready communication</small></div>
+      </div>
+    </div>
+  </main>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>What I can do for you.</h2>
+        <p>Practical, flexible support designed to save you time and keep your day-to-day operations running smoothly.</p>
+      </div>
+      <div class="services">
+        <article class="service"><div class="icon">✦</div><h3>Administrative Support</h3><p>Data entry, document organization, file management, scheduling, research, and other essential admin tasks.</p></article>
+        <article class="service"><div class="icon">◫</div><h3>Virtual Assistance</h3><p>Inbox support, task coordination, online research, spreadsheets, and dependable remote assistance.</p></article>
+        <article class="service"><div class="icon">⌘</div><h3>Digital & KDP Support</h3><p>Basic book formatting workflows, content organization, listing support, and other digital publishing tasks.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <img class="about-img" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85" alt="Professional working at a desk">
+      <div class="about-copy">
+        <div class="eyebrow">About Ronnel Baskiñas</div>
+        <h2>A dependable extra pair of hands for your business.</h2>
+        <p>I focus on clear communication, accuracy, organization, and completing tasks with care. My goal is simple: make your workload lighter so you can spend more time growing your business.</p>
+        <p>Whether you need ongoing administrative help or support with a specific project, I bring a professional and client-focused approach to every task.</p>
+        <div class="checks">
+          <div><span>✓</span> Detail-oriented and organized</div>
+          <div><span>✓</span> Reliable remote communication</div>
+          <div><span>✓</span> Flexible support for growing businesses</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <div class="eyebrow">Let’s connect</div>
+          <h2>Have a task in mind?</h2>
+          <p>Tell me what you need help with. I’d be happy to discuss your project and see how I can support you.</p>
+        </div>
+        <form onsubmit="sendMessage(event)">
+          <input id="name" type="text" placeholder="Your name" required>
+          <input id="email" type="email" placeholder="Your email" required>
+          <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+          <button class="btn btn-primary" type="submit">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Ronnel Virtual Assistant. All rights reserved.</div>
+      <div>Remote • Philippines</div>
+    </div>
+  </footer>
+
+  <script>
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Virtual Assistant Inquiry from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nProject details:\n' + message);
+      window.location.href = 'mailto:ronnel.baskinas@gmail.com?subject=' + subject + '&body=' + body;
+    }
+  </script>
+</body>
+</html>
